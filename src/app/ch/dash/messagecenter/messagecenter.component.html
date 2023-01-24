@@ -1,0 +1,107 @@
+<mat-card class="custom_container overF">
+    <mat-card-content class="overF hideInMob">
+        <h3>Message Center
+            <!-- -{{setDPWithForm}} - {{uploadCTADisabled}} -->
+        </h3>
+        <!-- Hello {{displayName}} -->
+        <!-- {{photoURL}} -->
+        <mat-divider></mat-divider>
+    </mat-card-content>
+    <div class="width_100 fl overF posr">
+        <mat-card class="charsd_1 posr" [ngClass]="checkBoxIsActive == true ? 'nonactive' : 'active'">
+            <mat-card class="bannerSectMessager" routerLink="/dash/profile">
+                <img src="{{photoURL}}" class="profileForChat">
+                <span class="chatTitleProfile1">{{displayName}}</span>
+            </mat-card>
+            <mat-form-field class="example-form-field width_100">
+                <mat-label>Find specific user</mat-label>
+                <input matInput type="text" [(ngModel)]="findChat" (keyup)="updateUsersListTemo()">
+                <button *ngIf="findChat" matSuffix mat-icon-button aria-label="Clear" (click)="clearChatFind()">
+                    <mat-icon>close</mat-icon>
+                </button>
+                <button *ngIf="!findChat" matSuffix mat-icon-button aria-label="Find">
+                    <mat-icon>search</mat-icon>
+                </button>
+                
+            </mat-form-field>
+            <mat-divider></mat-divider>
+            <div class="width_100 overf chatListScrolls">
+
+                <mat-list *ngFor="let chatUser of printUsers" class="userChatList">
+                    <div class="width_100" *ngIf="chatUser.uid != uid" (click)="openCharWith(chatUser.uid)">
+
+                        <mat-divider></mat-divider>
+                        <mat-list-item class="mat-list-item-content_p posr">
+                            <img src="{{chatUser.photoURL || defaultPhotoMe}}" class="profileForChat">
+                            <span class="listChatName">{{chatUser.displayName || chatUser.email}} 
+                            </span>
+                            <span *ngIf="chatUser.unReadMessages > 0">
+                                <mat-icon matBadge="{{chatUser.unReadMessages}}" >message</mat-icon>
+                            </span>
+                            
+                        </mat-list-item>
+                    </div>
+                </mat-list>
+
+                <mat-divider></mat-divider>
+            </div>
+
+        </mat-card>
+
+        <mat-card class="charsd_2" [ngClass]="checkBoxIsActive == true ? 'active' : 'nonactive'">
+            <div class="width_100 chatPannel" *ngIf="currentChatUserId">
+                <mat-card class="bannerSectMessager">
+                    <img src="{{currentChatUserId.photoURL}}" class="profileForChat">
+                    <span class="chatTitleProfile1 v2">{{currentChatUserId.displayName}}</span><br>
+                    <span class="chatTitleProfile1 v2">{{currentChatUserId.email}}</span>
+                    <button class="closeChatBox" (click)="closeChatBox()"><mat-icon>close</mat-icon></button>
+                </mat-card>
+                <div class="width_100 overf chatListScrolls ">
+                    <mat-card class="width_100 chatPannel chatParent" >
+                      
+
+                        <div class="width_100 fl posr" *ngFor="let currentMgs of chatboxShowThisMessges " >
+                            <div *ngIf="currentMgs.messageFrom == uid ; else elseBlock">
+                                <mat-card class="sendByMe message_container_single">
+                                    {{currentMgs.messageBody}}
+                                    
+                                    <!-- | date:"dd/MM/yyyy HH:mm" -->
+                                </mat-card>
+                                <span class="mgstime timebyme">{{currentMgs.messageDateTime}}</span> 
+                            </div>
+                            <ng-template #elseBlock>
+                                <mat-card class="anotherCenter message_container_single">
+                                    {{currentMgs.messageBody}}
+                                </mat-card>
+                                <span class="mgstime timebysender">{{currentMgs.messageDateTime}}</span> 
+                            </ng-template>
+                        </div>
+
+
+                        <div id="scrolltoLast" class="width_100 fl overF"></div>
+                    </mat-card>
+                </div>
+                <div class="width_100 fl posr">
+                    <input placeholder="Type a message" (keyup.enter)="sendMessageTo(currentOpenChatOf, currentChatOpenUid)" [(ngModel)]="getTypedMessge" class="sendChatMgs">
+                    <button class="sendMgsChat" (click)="sendMessageTo(currentOpenChatOf, currentChatOpenUid)">
+                        <mat-icon>send</mat-icon>
+                    </button>
+                </div>
+            </div>
+
+
+
+
+            <div class="width_100 custom_home_chat" *ngIf="!currentOpenChatOf">
+                <div class="t_a_c width_100">
+                    <h1>Hardknox Messanger <mat-icon> message</mat-icon></h1>
+                    <h3>
+                        Welcome {{displayName}}😀<br>
+                    </h3>
+                </div>
+                
+            </div>
+            
+        </mat-card>
+    </div>
+</mat-card>

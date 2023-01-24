@@ -1,0 +1,81 @@
+<mat-card class="custom_container" *ngIf="loadView">
+    <!-- *ngIf="" -->
+    <mat-card-content class="overF">
+        <h3>Profile Section 
+            <!-- -{{setDPWithForm}} - {{uploadCTADisabled}} -->
+        </h3>
+        <!-- Hello {{displayName}} -->
+        <!-- {{photoURL}} -->
+        <mat-divider></mat-divider>
+        <h3>&nbsp;</h3>
+        <!-- <img src="{{tempProfilePath}}"> -->
+        <div class="formDashSec1">
+            <div class="width_100 fl t_a_c">
+                <div class="profile_dp_p t_a_c mar0auto pb_20">
+                    <label class="width_100 cusP dp_cp backLoading" for="uploadDPInp"
+                        matTooltip="Edit profile image and see preview">
+                        <img src="{{photoURL}}" class="width_100 mb_20 loadImagBack" for="dpUpload" class="img_src"
+                            (error)="errImage($event)">
+                        <div class="editOverLay">
+                            <p class="editPtext_p">Edit Profile</p>
+                        </div>
+                    </label>
+                    
+                    <input type="file" (change)="uploadDPChange($event)" accept="*.png.jpg" id="uploadDPInp"
+                        [(ngModel)]="profileImageInp" class="hidden">
+
+                    <button type="button" mat-raised-button class="mb_20" (click)="uploadDPClick()"
+                        [hidden]="uploadCTADisabled" matTooltip="Update profile image with preview">
+                        <mat-icon>cloud_upload</mat-icon> Upload & Save
+                    </button>
+                    <mat-progress-bar mode="determinate" [value]="uploadPofileStatus" class="width_100 mb_20"
+                        [hidden]="uploadProfielLoader"></mat-progress-bar>
+                </div>
+            </div>
+
+        </div>
+        <div class="formDashSec2 pb_20 ">
+            <form class="example-form" [formGroup]="updateProfile" (ngSubmit)="updateProfileCondtions()">
+                <mat-form-field class="example-full-width mb_20" appearance="fill">
+                    <mat-label>Full Name</mat-label>
+                    <input type="text" matInput formControlName="userFullName" placeholder="Ex. pat@example.com">
+                </mat-form-field>
+                <mat-form-field class="example-full-width mb_20" appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput formControlName="userEmail" placeholder="Ex. pat@example.com">
+                </mat-form-field>
+                <mat-form-field class="example-full-width mb_20" appearance="fill">
+                    <mat-label>Choose a date *</mat-label>
+                    <input matInput readonly="true" formControlName="userBirthDate" (focus)="picker.open()"
+                        [matDatepicker]="picker" type="text">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field class="example-full-width mb_20" appearance="fill">
+                    <mat-label>Mobile Number</mat-label>
+                    <span matPrefix>+91 &nbsp;</span>
+                    <input type="tel" matInput placeholder="555 555 1234" formControlName="contactNumber"
+                        maxlength="10">
+                    <mat-icon matSuffix>phone_in_talk</mat-icon>
+                </mat-form-field>
+                
+
+                <mat-divider></mat-divider>
+
+                <section>
+
+                    <div class="example-button-row mt_20">
+                        <button mat-raised-button class="mb_20" color="primary" style="float: right"
+                            matTooltip="Update New User Data">Update</button>
+                        <button mat-raised-button class="mb_20" style="float: right; margin-right: 20px;" type="button"
+                            matTooltip="Reset New User Data" (click)="resetProfileForm()">Cancel</button>
+                    </div>
+                </section>
+
+            </form>
+
+        </div>
+
+    </mat-card-content>
+</mat-card>

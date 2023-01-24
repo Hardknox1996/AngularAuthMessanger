@@ -1,0 +1,276 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.fl
+{
+    float: left;
+}
+
+/* Common CSS Start*/
+.custom_container {
+    width: 1000px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.height100{
+    height: 100%;
+}
+.posr
+{
+    position: relative;
+}
+
+.nav_contain{
+    padding:  0 !important;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.logoDash {
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+.dashMainRouter {
+    padding: 10px
+}
+
+.width_100,
+.example-full-width {
+    width: 100%;
+}
+
+
+.overF {
+    overflow: hidden;
+}
+
+.profile_dp_p {
+    width: 150px;
+    max-width: 100%;
+}
+
+.t_a_c {
+    text-align: center;
+}
+
+.cusP {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.mar0auto {
+    margin: 0 auto;
+}
+
+.img_src {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cusP {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.mar0auto {
+    margin: 0 auto;
+}
+.drawer_p{
+    background-color: #673ab7;
+    color: #fff;
+}
+.drawer_p .mat-list-base .mat-list-item
+{
+    color: #fff;
+    cursor: pointer;
+}
+.drawer_p .mat-divider{
+    background-color: #fff;
+}
+.drawer_menu_icon{
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+
+
+/* @keyframes placeHolderShimmer {
+    0% {
+      background-position: -800px 0
+    }
+    100% {
+      background-position: 800px 0
+    }
+  }
+.backLoading{
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background-color: #f6f7f8;
+    background: linear-gradient(to right, #eeeeee 8%, #bbbbbb 18%, #eeeeee 33%);
+} */
+/* Common CSS End*/
+
+
+
+
+
+/* Margin Padding Classes */
+.mt_20 {
+    margin-top: 20px;
+}
+
+.mb_20 {
+    margin-bottom: 20px
+}
+
+.pt_20 {
+    padding-top: 20px;
+}
+
+.pb_20 {
+    padding-bottom: 20px;
+}
+
+.mt_40 {
+    margin-top: 40px;
+}
+
+.mb_40 {
+    margin-bottom: 40px
+}
+
+.pt_40 {
+    padding-top: 40px;
+}
+
+.pb_40 {
+    padding-bottom: 40px;
+}
+/* Margin Padding Classes */
+
+
+
+
+
+
+
+.formDashSec1 {
+    width: 30%;
+    float: left;
+    overflow: hidden;
+}
+
+.formDashSec2 {
+    width: 70%;
+    float: left;
+    overflow: hidden;
+}
+
+
+
+
+
+.dp_cp {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.editOverLay {
+    position: absolute;
+    left: 0;
+    bottom: -100%;
+    /* bottom: 0; */
+    background-color: #673ab7ab;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dp_cp:hover .editOverLay {
+    bottom: 0;
+}
+
+.editPtext_p {
+    font-size: 14px;
+    color: #fff;
+    margin: 0;
+}
+
+.custom_container {
+    width: 1000px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.heigh_100vh {
+    height: 100vh;
+    overflow: scroll;
+}
+
+.drawer_p {
+    max-width: 80%;
+    padding-top: 20px;
+}
+
+.drawer_list {
+    width: 350px;
+    max-width: 100%;
+}
+
+[routerLink] {
+    cursor: pointer;
+}
+
+.dashLogo {
+    margin-left: 20px;
+}
+
+.progressBar {
+    position: fixed !important;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    z-index: 8;
+    display: none !important;
+}
+
+.progressBar.true {
+    display: block !important;
+}
+.googleCreateIocn{
+    width: 15px;
+    margin-right: 10px;
+    position: relative;
+    top: -1px;
+}
+
+
+
+

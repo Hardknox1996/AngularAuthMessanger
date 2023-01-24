@@ -1,0 +1,214 @@
+/* ChatBox */
+.charsd_1,
+.charsd_2
+{
+    /* border: 1px solid #673ab7; */
+    width: 35%;
+    float: left;
+    overflow: hidden;
+    height: calc(100vh - 200px);
+}
+.charsd_2
+{
+    width: 65%;
+}
+.bannerSectMessager
+{
+    /* position: absolute !important; */
+    left: 0;
+    width: 99%;
+    right: 0;
+    margin-bottom: 20px !important;
+    background: #673ab7;
+    color: #fff;
+    overflow: hidden;
+}
+
+.profileForChat
+{
+    width: 40px;
+    max-height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+    display: block;
+    float: left;
+}
+.chatTitleProfile1
+{
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 70%;
+    display: block;
+    float: left;
+    padding-top: 9px;
+}
+
+.userChatList
+{
+    padding-top: 0;
+    cursor: pointer;
+}
+.chatListScrolls
+{
+    height: calc(100% - 130px);
+    margin-bottom: 10px;
+}
+
+.chatParent::-webkit-scrollbar {
+    width: 4px;
+    overflow-y: scroll;
+    background: transparent;
+    box-shadow: inset 0 0 4px transparent;
+}
+
+.chatParent::-webkit-scrollbar-thumb {
+    background: #673ab7;
+    border-radius: 10px;
+}
+
+.chatPannel{
+    height: 99%;
+}
+.custom_home_chat
+{
+    width: 100%;
+    height: 100%;
+    background-color: #673ab726;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sendChatMgs{
+    width: 100%;
+    height: 40px;
+    background: #fff;
+    border: 1px solid #673ab7;
+    border-radius: 7px;
+    padding-left: 15px;
+    outline: none;
+    padding-right: 90px;
+}
+.sendMgsChat
+{
+    width: 70px;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9px;
+    color: #fff;
+    background: #673ab7;
+    outline: none;
+    border: none;
+}
+
+.chatParent
+{
+    background-color: #673ab726;
+    height: 98%;
+    overflow-y: scroll;
+}
+.message_container_single{
+    width: auto;
+    border-radius: 30px;
+    font-size: 12px;
+    padding: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+.anotherCenter
+{
+    border-top-left-radius: 0;
+    float: left;
+}
+.sendByMe{
+    border-top-right-radius: 0;
+    float: right;
+    background: #673ab7;
+    color: #fff;
+}
+.mgstime
+{
+    position: absolute;
+    bottom: -3px;
+    font-size: 10px;
+    display: none;
+}
+.timebyme
+{
+    right: 0;
+}
+.timebysender
+{
+    left: 0;
+}
+.chatTitleProfile1.v2
+{
+    font-size: 14px;
+    line-height: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 70%;
+    display: block;
+    float: left;
+    padding-top: 0;
+}
+.mat-list-item-content_p .mat-list-item-content{
+    width: 100%;
+    justify-content: center;
+}
+.listChatName{
+    display: block;
+    width: 70%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.closeChatBox{
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    .charsd_1{
+        width: 100%;
+        margin: 0 auto;
+        float: unset;
+    }
+    .charsd_1.nonactive{
+        display: none;
+    }
+    .charsd_2{
+        width: 100%;
+        display: none;
+    }
+    .charsd_2.active{
+        display: block;
+    }
+    .closeChatBox{
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: 22px;
+        background: none;
+        border: none;
+        outline: none;
+        color: #fff;
+    }
+    .bannerSectMessager
+    {
+        width: 100%;
+    }
+    .hideInMob
+    {
+        display: none;
+    }
+}

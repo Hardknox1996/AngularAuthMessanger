@@ -1,0 +1,89 @@
+<!--nav.component.html-->
+<mat-progress-bar mode="indeterminate" class="progressBar {{showHomeLoader}}"></mat-progress-bar>
+<mat-drawer-container class="example-container">
+    <mat-drawer #drawer mode="over" class="drawer_p">
+        <mat-list class="drawer_list">
+            <mat-list-item routerLink="/dash" (click)="drawer.toggle()">
+                <h2>{{dashName}}</h2>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item routerLink="/dash" (click)="drawer.toggle()">
+                <mat-icon class="drawer_menu_icon">home</mat-icon> Home
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item routerLink="/dash/profile" (click)="drawer.toggle()">
+                <mat-icon class="drawer_menu_icon">person</mat-icon> Profile
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item routerLink="/dash/messagecenter" (click)="drawer.toggle()">
+                <mat-icon class="drawer_menu_icon">message</mat-icon> Messages
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item (click)="logOutUser()">
+                <mat-icon class="drawer_menu_icon">lock</mat-icon> Logout
+            </mat-list-item>
+            <mat-divider></mat-divider>
+
+        </mat-list>
+    </mat-drawer>
+    <mat-sidenav-container class="heigh_100vh ">
+
+        <mat-toolbar color="primary">
+            <div class="custom_container">
+                <mat-toolbar color="primary" class="nav_contain" >
+                    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+                        (click)="drawer.toggle()">
+                        <mat-icon>menu</mat-icon>
+                    </button>
+                    <span class="dashLogo" routerLink="/dash">{{dashName}}</span>
+
+                    <span class="example-spacer"></span>
+                    <span class="example-spacer"></span>
+                    <button mat-icon-button class="example-icon favorite-icon"
+                        aria-label="Example icon-button with heart icon" routerLink="/dash/profile">
+                        <mat-icon>person</mat-icon>
+                    </button>
+                    <button (click)="logOutUser()" mat-icon-button class="example-icon"
+                        aria-label="Example icon-button with share icon">
+                        <mat-icon>lock</mat-icon>
+                    </button>
+                </mat-toolbar>
+            </div>
+        </mat-toolbar>
+        <!-- Parent {{userData.email}} - {{userData.emailVerified}}
+            <br>
+            <br> -->
+        <div class="dashMainRouter">
+            <router-outlet></router-outlet>
+        </div>
+
+    </mat-sidenav-container>
+</mat-drawer-container>
+
+
+
+
+<!-- <mat-toolbar color="primary"> -->
+<!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" mat-button (click)="drawer.toggle()">
+                    <mat-icon>menu</mat-icon>
+                </button> -->
+
+<!-- <mat-toolbar color="primary">
+                <span>My Application</span>
+            </mat-toolbar> -->
+
+<!-- <button class="logoDash" mat-button routerLink="/dash">My DashBoard</button> -->
+
+<!-- <button mat-button routerLink="/dash" class="fl">Home</button>
+            <button mat-button (click)="showProgressBar(true)">ShowLoader</button>
+            <button mat-button (click)="showProgressBar(false)">HideLoader</button>
+            <button mat-button routerLink="/dash/profile">Profile</button> -->
+
+<!-- <button mat-button routerLink="/login">LogIn</button> -->
+<!-- <button mat-button routerLink="">HomeWeb</button> -->
+
+<!-- <button mat-button [matMenuTriggerFor]="afterMenu">{{userData.displayName}}</button>
+            <mat-menu #afterMenu="matMenu" xPosition="after">
+                <button mat-menu-item>Item 1</button>
+                <button mat-menu-item>Item 2</button>
+            </mat-menu> -->

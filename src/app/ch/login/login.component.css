@@ -1,0 +1,22 @@
+.container-custom{
+    max-width: 400px;
+    margin: 100px auto;
+}
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  .fr
+  {
+    float: right;
+  }
+  .cta_ico{
+    font-size: 19px;
+    height: 20px;
+    width: 20px;
+  }

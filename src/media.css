@@ -1,0 +1,6 @@
+@media screen and (max-width: 992px) {
+    .formDashSec1,
+    .formDashSec2 {
+        width: 100%;
+    }
+}

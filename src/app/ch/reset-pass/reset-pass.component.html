@@ -1,0 +1,20 @@
+<mat-card class="container-custom">
+    <h2>Reset Pass</h2>
+    <form class="example-form" [formGroup]="resetPass" (ngSubmit)="sendResePass()">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="userPass" placeholder="Ex. pat@example.com">
+            
+        </mat-form-field>
+        <mat-divider></mat-divider>
+        <section>
+            <div class="example-button-row my-4">
+                <button type="button" mat-raised-button (click)="clearLogInForm()"><mat-icon class="cta_ico"> clear_all</mat-icon>Clear</button>
+                <button mat-raised-button color="primary" class="fr"
+                > <mat-icon class="cta_ico">send</mat-icon>  Send </button>
+            </div>
+        </section>
+        <a routerLink="/dash">Dash</a>
+        <a routerLink="/login" style="float: right;">Login</a>
+    </form>
+</mat-card>

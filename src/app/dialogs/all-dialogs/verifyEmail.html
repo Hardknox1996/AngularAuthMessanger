@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>Please Verify Your Email</h2>
+<mat-dialog-content class="mat-typography">
+  
+  <p>
+    <strong>Hello {{data.name || 'User'}},<br></strong>
+    Your Email id : <strong>{{data.email}}</strong> is not verified yet.<br>
+    <strong>You need to verify your email. You will not able to use system untill you verify your email.</strong><br>
+    We will sent you an email with an <strong>verification link on your registered email.</strong><br>
+    Please press procced to verify your email.
+  </p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <!-- <button mat-button mat-dialog-close>Cancel</button> -->
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Procced</button>
+</mat-dialog-actions>
